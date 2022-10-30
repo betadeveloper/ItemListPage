@@ -2,6 +2,7 @@ const tbody = document.querySelector('tbody');
 let data = {};
 let i = 0;
 
+// GET request to API
 axios.get('https://sheetdb.io/api/v1/t0tdd9q5rqp2u')
   .then( response => {
       response.data.forEach((element) => {
@@ -17,6 +18,7 @@ axios.get('https://sheetdb.io/api/v1/t0tdd9q5rqp2u')
     <td data-th="Annual income">${data.Annualincome}</td>
           </tr>
       `
+      //Appends retrieved and generated data to the table
       document.querySelector(".rwd-table").innerHTML += row;
       //Add event listener to eaceh generated row
     let rows = document.getElementById(`${i}`);
