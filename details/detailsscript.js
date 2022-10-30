@@ -2,6 +2,7 @@ const tbody = document.querySelector('tbody');
 let data = {};
 let i = 0;
 
+// GET data from API 
 axios.get('https://sheetdb.io/api/v1/t0tdd9q5rqp2u')
   .then( response => {
       response.data.forEach((element) => {
@@ -16,7 +17,7 @@ axios.get('https://sheetdb.io/api/v1/t0tdd9q5rqp2u')
         <td data-th="Position">${data.Position}</td>
         <td data-th="Annual income">${data.Annualincome}</td>
           </tr>
-      `
+      `//Append data to table
       document.querySelector(".rwd-table").innerHTML = row;
       });
   });
